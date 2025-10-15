@@ -1,0 +1,47 @@
+{
+  "name": "client",
+  "private": true,
+  "version": "0.0.0",
+  "type": "module",
+  "scripts": {
+    "dev": "cross-env BUILD_MODE=dev vite --host",
+    "build": "cross-env BUILD_MODE=production vite build --base=./",
+    "lint": "eslint src --ext js,jsx --report-unused-disable-directives --max-warnings 0",
+    "preview": "vite preview"
+  },
+  "dependencies": {
+    "@hookform/resolvers": "^5.2.2",
+    "@reduxjs/toolkit": "^2.9.0",
+    "@tailwindcss/vite": "^4.1.13",
+    "@uidotdev/usehooks": "^2.4.1",
+    "axios": "^1.12.2",
+    "cross-env": "^10.1.0",
+    "dayjs": "^1.11.18",
+    "lodash": "^4.17.21",
+    "lucide-react": "^0.544.0",
+    "react": "^19.1.1",
+    "react-dom": "^19.1.1",
+    "react-hook-form": "^7.63.0",
+    "react-redux": "^9.2.0",
+    "react-router-dom": "^7.9.3",
+    "react-spinners": "^0.17.0",
+    "react-super-responsive-table": "^6.0.2",
+    "react-toastify": "^11.0.5",
+    "redux-persist": "^6.0.0",
+    "tailwindcss": "^4.1.13",
+    "vite-plugin-svgr": "^4.5.0",
+    "yup": "^1.7.1"
+  },
+  "devDependencies": {
+    "@eslint/js": "^9.36.0",
+    "@types/react": "^19.1.13",
+    "@types/react-dom": "^19.1.9",
+    "@vitejs/plugin-react-swc": "^4.1.0",
+    "eslint": "^8.57.1",
+    "eslint-plugin-react": "^7.37.5",
+    "eslint-plugin-react-hooks": "^5.2.0",
+    "eslint-plugin-react-refresh": "^0.4.20",
+    "globals": "^16.4.0",
+    "vite": "^7.1.7"
+  }
+}
