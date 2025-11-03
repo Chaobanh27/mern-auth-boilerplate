@@ -10,7 +10,7 @@ const Router = express.Router()
 //lưu ý: route refresh token phải để trên cùng nếu không sẽ sinh ra lỗi API refresh token sẽ bị lỗi 410 luôn nên không hoạt động
 Router.route('/refresh_token')
   .get(userController.refreshToken)
-Router.route('/get_2fa_qr_code')
+Router.route('/2fa-qr-code')
   .get(authMiddleware.isAuthorized, userController.get2FaQrCode)
 /**
  * @swagger
@@ -69,14 +69,14 @@ Router.route('/update')
     userController.update
   )
 
-Router.route('/get_all_users')
+Router.route('')
   .get(
     authMiddleware.isAuthorized,
     roleCheckingMiddleware.isValidPermission(['user_read']),
     userController.getAllUsers
   )
 
-Router.route('/get_all_roles')
+Router.route('/get-all-roles')
   .get(
     authMiddleware.isAuthorized,
     userController.getAllRoles
@@ -90,10 +90,10 @@ Router.route('/reset-password')
 Router.route('/verify')
   .put(userValidation.verifyAccount, userController.verifyAccount)
 
-Router.route('/setup_2fa')
+Router.route('/setup-2fa')
   .post(authMiddleware.isAuthorized, userController.setup2FA)
 
-Router.route('/verify_2fa')
+Router.route('/verify-2fa')
   .put(authMiddleware.isAuthorized, userController.verify2FA)
 Router.route('/:id')
   .get(authMiddleware.isAuthorized, userController.getUser)

@@ -16,13 +16,13 @@ export const fetchUserAPI = async () => {
 }
 
 export const fetchAllUsersAPI = async (params) => {
-  const res = await authorizedAxiosInstance.get(`${API_ROOT}/v1/users/get_all_users`, { params })
+  const res = await authorizedAxiosInstance.get(`${API_ROOT}/v1/users`, { params })
   const users = res.data
   return users
 }
 
 export const fetchAllRolesAPI = async () => {
-  const res = await authorizedAxiosInstance.get(`${API_ROOT}/v1/users/get_all_roles`)
+  const res = await authorizedAxiosInstance.get(`${API_ROOT}/v1/users/get-all-roles`)
   const roles = res.data
   return roles
 }
@@ -34,22 +34,22 @@ export const verifyUserAPI = async (data) => {
 }
 
 export const refreshTokenAPI = async () => {
-  const response = await authorizedAxiosInstance.get(`${API_ROOT}/v1/users/refresh_token`)
+  const response = await authorizedAxiosInstance.get(`${API_ROOT}/v1/users/refresh-token`)
   return response.data
 }
 
 export const get2FaQrCodeAPI = async () => {
-  const res = await authorizedAxiosInstance.get(`${API_ROOT}/v1/users/get_2fa_qr_code`)
+  const res = await authorizedAxiosInstance.get(`${API_ROOT}/v1/users/2fa-qr-code`)
   return res.data
 }
 
 export const setup2FaAPI = async (otpToken) => {
-  const res = await authorizedAxiosInstance.post(`${API_ROOT}/v1/users/setup_2fa`, { otpToken })
+  const res = await authorizedAxiosInstance.post(`${API_ROOT}/v1/users/setup-2fa`, { otpToken })
   return res.data
 }
 
 export const verify2FaAPI = async (otpToken) => {
-  const res = await authorizedAxiosInstance.put(`${API_ROOT}/v1/users/verify_2fa`, { otpToken } )
+  const res = await authorizedAxiosInstance.put(`${API_ROOT}/v1/users/verify-2fa`, { otpToken } )
   return res.data
 }
 
